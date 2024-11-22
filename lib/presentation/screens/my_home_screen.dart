@@ -12,14 +12,14 @@ import 'package:my_portfolioo/widgets/skills_mobile.dart';
 import 'package:my_portfolioo/utility/colors.dart';
 
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class MyHomeScreen extends StatefulWidget {
+  const MyHomeScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomeScreen> createState() => _MyHomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomeScreenState extends State<MyHomeScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
   final List<GlobalKey> navBarKeys = List.generate(4, (index) => GlobalKey());
@@ -84,12 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        'What I can do',
+                        'Skills',
                         style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: CustomColor.whitePrimary),
                       ),
+                      const SizedBox(height: 12,),
                       if (constraints.maxWidth >= kMedDesktopWidth)
                         const SkillsDesktop()
                       else

@@ -15,29 +15,24 @@ class MainMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40),
-      height: screenHeight/2,
+      height: screenHeight/1.5,
       constraints: const BoxConstraints(maxHeight: 560),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ShaderMask(
-              shaderCallback: (bounds) {
-                return LinearGradient(colors: [
-                  CustomColor.scaffoldBg,
-                  CustomColor.scaffoldBg.withOpacity(0)
-                ]).createShader(bounds);
-              },
-              blendMode: BlendMode.srcATop,
-              child: Image.asset(
-                'assets/images/my_pic.jpeg',
-                width: screenWidth / 6,
-              )),
+          const SizedBox(height: 12,),
+          Center(
+            child: Image.asset(
+              'assets/images/my_pic.png',
+              width: screenWidth / 2,
+            ),
+          ),
           const SizedBox(height: 30,),
           const Text(
-            "Hi,\nI'm Hasan\nA Flutter & Node.js Developer",
+            "Hi, I am Hasan\nA Flutter & Node.js Developer",
             style: TextStyle(
-                fontSize: 24,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: CustomColor.whitePrimary,
                 height: 1.5),

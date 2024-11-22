@@ -11,11 +11,11 @@ class SkillsDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ConstrainedBox(
-          constraints: BoxConstraints(
-              maxWidth: 450
+          constraints: const BoxConstraints(
+              maxWidth: 700
           ),
           child: Wrap(
             spacing: 5,
@@ -23,23 +23,25 @@ class SkillsDesktop extends StatelessWidget {
             children: [
               for(int i=0; i<skillItems.length; i++)
                 Container(
-                  width: 200,
+                  width: 150,
                   decoration: BoxDecoration(
                     color: CustomColor.bgLight2,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: ListTile(
-                    contentPadding: EdgeInsets.symmetric(
+                    contentPadding: const EdgeInsets.symmetric(
                         horizontal: 20,
                         vertical: 10
                     ),
                     leading: Image.asset(skillItems[i]['img'], width: 26,),
                     title: Text(skillItems[i]['title']),
                   ),
-                )
+                ),
+
             ],
           ),
         ),
+
       ],
     );
   }

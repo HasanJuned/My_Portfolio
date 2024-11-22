@@ -26,7 +26,7 @@ class MainDesktop extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Hi,\nI'm Hasan\nA Flutter & Node.js Developer", style: TextStyle(
+              const Text("Hi, I am Hasan\nA Flutter & Node.js Developer", style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: CustomColor.whitePrimary,
@@ -42,7 +42,7 @@ class MainDesktop extends StatelessWidget {
               ),
             ],
           ),
-          Image.asset('assets/images/my_pic.jpeg', width: screenWidth/6,)
+          Image.asset('assets/images/my_pic.png', width: screenWidth/4,)
         ],
       ),
     );

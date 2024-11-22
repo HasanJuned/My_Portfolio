@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolioo/utility/colors.dart';
 
 class SiteLogo extends StatelessWidget {
   const SiteLogo({
@@ -14,10 +13,10 @@ class SiteLogo extends StatelessWidget {
       child: const Text(
         'HA',
         style: TextStyle(
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
-            decoration: TextDecoration.underline,
-            color: CustomColor.yellowSecondary),
+            color: Colors.blueGrey,
+        ),
       ),
     );
   }

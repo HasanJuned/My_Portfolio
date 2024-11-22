@@ -6,10 +6,11 @@ import 'package:my_portfolioo/utility/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({
-    super.key, required this.onNavMenuTap,
+    super.key,
+    required this.onNavMenuTap,
   });
-  final Function(int) onNavMenuTap;
 
+  final Function(int) onNavMenuTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,29 +22,27 @@ class HeaderDesktop extends StatelessWidget {
       child: Row(
         children: [
           SiteLogo(
-            onTap: (){
-
-            },
+            onTap: () {},
           ),
           const Spacer(),
           for (int i = 0; i < navTitles.length; i++)
             Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: TextButton(
-                  onPressed: () {
-                    onNavMenuTap(i);
-                  },
-                  child: Text(
-                    navTitles[i],
-                    style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: CustomColor.whitePrimary),
-                  )),
+                onPressed: () {
+                  onNavMenuTap(i);
+                },
+                child: Text(
+                  navTitles[i],
+                  style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: CustomColor.whitePrimary,),
+                ),
+              ),
             )
         ],
       ),
     );
   }
 }
-

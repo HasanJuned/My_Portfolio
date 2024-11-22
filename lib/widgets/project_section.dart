@@ -31,7 +31,7 @@ class ProjectsSection extends StatelessWidget {
           Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(
-                  maxWidth: 900
+                  maxWidth: 950
               ),
               child: Wrap(
                 spacing: 25,

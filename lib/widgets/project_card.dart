@@ -16,7 +16,7 @@ class ProjectCard extends StatelessWidget {
     return Container(
       clipBehavior: Clip.antiAlias,
       height: 300,
-      width: 290,
+      width: 250,
       decoration: BoxDecoration(
           color: CustomColor.bgLight2, borderRadius: BorderRadius.circular(10)),
       child: Column(
@@ -47,8 +47,8 @@ class ProjectCard extends StatelessWidget {
             child: Row(
               children: [
                 const Text(
-                  'Available on ',
-                  style: const TextStyle(
+                  'Click',
+                  style: TextStyle(
                       color: CustomColor.yellowSecondary, fontSize: 10),
                 ),
                 const Spacer(),

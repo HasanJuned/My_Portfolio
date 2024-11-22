@@ -10,7 +10,7 @@ class MyPortfolio extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'About Hasan',
       theme: ThemeData.dark(),
-      home: const MyHomePage(),
+      home: const MyHomeScreen(),
     );
   }
 }
