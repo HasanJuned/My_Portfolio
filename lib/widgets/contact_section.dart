@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:my_portfolioo/app/constants/size.dart';
 import 'package:my_portfolioo/widgets/custom_text_field.dart';
 import 'package:my_portfolioo/utility/colors.dart';
 import 'dart:js' as js;
 
-
 class ContactSection extends StatelessWidget {
-  const ContactSection({
+  ContactSection({
     super.key,
     required this.getInputBorder,
   });
 
   final OutlineInputBorder getInputBorder;
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
+
+
+  Future<void> openEmailApp(String name, String email, String message) async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'softenghasan25@gmail.com',
+      query: 'subject=New Email from Portfolio&body=Name: $name\nEmail: $email\nMessage:\n$message',
+    );
+    if (await canLaunch(emailUri.toString())) {
+      await launch(emailUri.toString());
+    } else {
+      //print('Could not open email client');
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +66,7 @@ class ContactSection extends StatelessWidget {
             child: Column(
               children: [
                 CustomTextField(
+                  controller: _messageController,
                   getInputBorder: getInputBorder,
                   hintText: 'Your Message',
                   maxLine: 20,
@@ -59,10 +78,26 @@ class ContactSection extends StatelessWidget {
                   width: double.maxFinite,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.redAccent
+                        backgroundColor: Colors.redAccent),
+                    onPressed: () {
+                      final name = _nameController.text.trim();
+                      final email = _emailController.text.trim();
+                      final message = _messageController.text.trim();
+
+                      if (name.isEmpty || email.isEmpty || message.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Please fill out all fields')),
+                        );
+                        return;
+                      }
+
+                      openEmailApp(name, email, message);
+                    },
+                    child: const Text(
+                      'Send',
+                      style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () {},
-                    child: const Text('Send', style: TextStyle(color: Colors.white),),
                   ),
                 ),
                 const SizedBox(
@@ -82,7 +117,9 @@ class ContactSection extends StatelessWidget {
                   children: [
                     GestureDetector(
                         onTap: () {
-                          js.context.callMethod('open', ['https://www.linkedin.com/in/hasan-ahmad-502391204/']);
+                          js.context.callMethod('open', [
+                            'https://www.linkedin.com/in/hasan-ahmad-502391204/'
+                          ]);
                         },
                         child: Image.asset(
                           'assets/images/linkedin.png',
@@ -90,7 +127,8 @@ class ContactSection extends StatelessWidget {
                         )),
                     GestureDetector(
                       onTap: () {
-                        js.context.callMethod('open', ['https://github.com/HasanJuned']);
+                        js.context.callMethod(
+                            'open', ['https://github.com/HasanJuned']);
                       },
                       child: Image.asset(
                         'assets/images/github.png',
@@ -112,6 +150,7 @@ class ContactSection extends StatelessWidget {
       children: [
         Expanded(
             child: CustomTextField(
+          controller: _nameController,
           getInputBorder: getInputBorder,
           hintText: 'Your Name',
         )),
@@ -120,6 +159,7 @@ class ContactSection extends StatelessWidget {
         ),
         Expanded(
             child: CustomTextField(
+          controller: _emailController,
           getInputBorder: getInputBorder,
           hintText: 'Your Email',
         )),
@@ -132,6 +172,7 @@ class ContactSection extends StatelessWidget {
       children: [
         Expanded(
             child: CustomTextField(
+          controller: _nameController,
           getInputBorder: getInputBorder,
           hintText: 'Your Name',
         )),
@@ -140,6 +181,7 @@ class ContactSection extends StatelessWidget {
         ),
         Expanded(
             child: CustomTextField(
+          controller: _emailController,
           getInputBorder: getInputBorder,
           hintText: 'Your Email',
         )),

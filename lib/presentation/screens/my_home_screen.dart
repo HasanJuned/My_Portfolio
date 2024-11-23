@@ -10,6 +10,7 @@ import 'package:my_portfolioo/widgets/project_section.dart';
 import 'package:my_portfolioo/widgets/skills_desktop.dart';
 import 'package:my_portfolioo/widgets/skills_mobile.dart';
 import 'package:my_portfolioo/utility/colors.dart';
+import 'dart:js' as js;
 
 
 class MyHomeScreen extends StatefulWidget {
@@ -114,6 +115,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
 
   void scrollToSection(int navIndex) {
     if (navIndex == 4) {
+      js.context.callMethod('open', ['https://drive.google.com/file/d/1T-f8OABVDFijm0X9AARWxgstacKjCIQf/view?usp=sharing']);
       return;
     }
     final key = navBarKeys[navIndex];
