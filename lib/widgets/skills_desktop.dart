@@ -25,7 +25,7 @@ class SkillsDesktop extends StatelessWidget {
                 Container(
                   width: 150,
                   decoration: BoxDecoration(
-                    color: CustomColor.bgLight2,
+                    color: CustomColor.scaffoldBg,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: ListTile(
@@ -34,7 +34,7 @@ class SkillsDesktop extends StatelessWidget {
                         vertical: 10
                     ),
                     leading: Image.asset(skillItems[i]['img'], width: 26,),
-                    title: Text(skillItems[i]['title']),
+                    title: Text(skillItems[i]['title'], style: TextStyle(color: CustomColor.whitePrimary),),
                   ),
                 ),
 

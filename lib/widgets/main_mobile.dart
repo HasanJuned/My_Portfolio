@@ -15,7 +15,7 @@ class MainMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40),
-      height: screenHeight/1.5,
+      height: screenHeight/1.23,
       constraints: const BoxConstraints(maxHeight: 560),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ class MainMobile extends StatelessWidget {
           Center(
             child: Image.asset(
               'assets/images/my_pic.png',
-              width: screenWidth / 2,
+              width: screenWidth,
             ),
           ),
           const SizedBox(height: 30,),
