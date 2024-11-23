@@ -58,8 +58,11 @@ class ContactSection extends StatelessWidget {
                 SizedBox(
                   width: double.maxFinite,
                   child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.redAccent
+                    ),
                     onPressed: () {},
-                    child: const Text('Send'),
+                    child: const Text('Send', style: TextStyle(color: Colors.white),),
                   ),
                 ),
                 const SizedBox(

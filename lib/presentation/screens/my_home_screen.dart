@@ -83,13 +83,29 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Text(
-                        'Skills',
-                        style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: CustomColor.whitePrimary),
-                      ),
+                       // const Padding(
+                       //   padding: EdgeInsets.only(left: 100.0),
+                       //   child: Row(
+                       //    //mainAxisAlignment: MainAxisAlignment.s,
+                       //    children: [
+                       //      Text(
+                       //        'Work Experience',
+                       //        style: TextStyle(
+                       //            fontSize: 24,
+                       //            fontWeight: FontWeight.bold,
+                       //            color: CustomColor.whitePrimary),
+                       //      ),
+                       //      SizedBox(width: 300,),
+                       //      Text(
+                       //        'Skills',
+                       //        style: TextStyle(
+                       //            fontSize: 24,
+                       //            fontWeight: FontWeight.bold,
+                       //            color: CustomColor.whitePrimary),
+                       //      ),
+                       //    ],
+                       //                         ),
+                       // ),
                       const SizedBox(height: 12,),
                       if (constraints.maxWidth >= kMedDesktopWidth)
                         const SkillsDesktop()

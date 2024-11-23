@@ -34,8 +34,8 @@ class ProjectsSection extends StatelessWidget {
                   maxWidth: 950
               ),
               child: Wrap(
-                spacing: 25,
-                runSpacing: 25,
+                spacing: 100,
+                runSpacing: 35,
                 children: [
                   for(int i=0; i<projects.length; i++)
                     ProjectCard(projectDetails: projects[i],),
